@@ -13,7 +13,7 @@ define ->
         gen: =>
             @.ship =
                 vis:
-                    color: "#ffbf00"
+                    color: "#C6C4C5"
                     scale: 6.66
                     points: [
                         x:  0.00
