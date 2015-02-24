@@ -1,12 +1,9 @@
 {
-  "name": "personal-canvas-asteroids",
-  "version": "0.0.0",
+  "name": "ludomade-error",
+  "version": "0.0.1",
   "dependencies": {
     "requirejs": "~2.1.11",
     "jquery": "~2.1.0",
-    "requirejs-plugins": "~1.0.2",
-    "requirejs-text": "~2.0.10",
-    "pixi.js": "~1.6.1",
     "requestAnimationFrame": "~0.0.22"
   }
 }
