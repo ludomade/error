@@ -99,7 +99,7 @@ module.exports = function( grunt ) {
 
 		watch: {
 			compass: {
-				files: [ "app/styles/**/*.{scss,sass}" ],
+				files: [ "app/sass/**/*.{scss,sass}" ],
 				tasks: "compass:dev",
 				options: {
 					debounceDelay: 200
