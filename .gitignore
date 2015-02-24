@@ -3,6 +3,6 @@ Thumbs.db
 .sass-cache
 /node_modules
 /dist
-/app/scripts/vendor
-/app/styles/main.css
+/app/scripts
+/app/styles
 *.map
