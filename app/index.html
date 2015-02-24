@@ -1,24 +1,45 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Asteroids</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
-        <link href="http://fonts.googleapis.com/css?family=Roboto:100,700" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    </head>
-    <body>
-        <canvas></canvas>
-        <div class="instructions">
-            <h1>404</h1>
-            <a href="/"><h3>Take Me Home</h3></a>
-            <p>Arrows to move,<br />Space to shoot</p>
-        </div><div class="instructions">
-            <h1>404</h1>
-            <a href="/"><h3>Take Me Home</h3></a>
-            <p>Arrows to move,<br />Space to shoot</p>
-        </div>
-        <!--<script src="/scripts/main.js"></script>-->
-		<script data-main="scripts/main" src="scripts/vendor/requirejs/require.js"></script>
-    </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Ludomade | Error</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet" type="text/css">
+    <!--(if target dev)><!-->
+    <link rel="stylesheet" href="styles/main.css">
+    <!--<!(endif)-->
+    <!--(if target dist)>
+    <style>
+    include "styles/main.css"
+    </style>
+    <!(endif)-->
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <h1>ERROR</h1>
+        <p>Page not found, or access may be restricted.<br />
+        Arrows to move, spacebar to shoot.</p>
+    </main>
+    <div class="ludomade">
+        <a href="http://www.ludomade.com/">
+        <div class="mark">
+            <svg version="1.1" id="mark-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="131.9 75.8 149.9 157.8" enable-background="new 131.9 75.8 149.9 157.8" xml:space="preserve">
+                <path id="M" fill="#383536" d="M206.9,119.3l-74.9-43.6v112.8l33.9-19.8V134l41,24l41-24v34.7l33.9,19.8V75.8L206.9,119.3z"/>
+                <path id="L" fill="#383536" d="M206.9,195l-40.2-23.4L133.5,191l73.4,42.6l73.4-42.7L247,171.5L206.9,195z"/>
+            </svg>
+        </div><br />
+        www.ludomade.com</a>
+    </div>
+    <!--(if target dev)><!-->
+    <script data-main="scripts/main" src="scripts/vendor/requirejs/require.js"></script>
+    <!--<!(endif)-->
+    <!--(if target dist)>
+    <script>
+    include "scripts/main.js"
+!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-54517692-1","auto"),ga("send","pageview");    
+    </script>
+    <!(endif)-->
+    </script>
+</body>
 </html>
