@@ -11,29 +11,15 @@ module.exports = function( grunt ) {
 	grunt.initConfig({
 
 		clean: {
-			dist: [ "dist" ]
-		},
-
-		copy: {
-			dist: {
-				files: [{
-					src: [
-						"fonts/**",
-						"images/**",
-						"favicon.ico"
-					],
-					dest: "dist/",
-					cwd: "app/",
-					expand: true
-				}]
-			}
+			dist: [ "dist" ],
+			external: [ "dist/scripts", "dist/styles" ]
 		},
 
 		compass: {
 			dev: {
 				options: {
 					basePath: "app",
-					sassDir: "styles",
+					sassDir: "sass",
 					cssDir: "styles",
 					environment: "development",
 					imagesDir: "images",
@@ -45,7 +31,7 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				options: {
-					sassDir: "app/styles",
+					sassDir: "app/sass",
 					cssDir: "dist/styles",
 					environment: "production",
 					imagesDir: "dist/images",
@@ -70,6 +56,7 @@ module.exports = function( grunt ) {
 				ext: ".js"
 			}
 		},
+
 		coffeelint: {
 			app: {
 				files: {
@@ -98,37 +85,11 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		concat: {
-			options: {
-				stripBanners: true,
-				banner: "/*\n* personal-canvas-asteroids\n" + 
-					"*/\n\n"
-			},
-			home: {
-				src: [ "dist/scripts/main.js" ],
-				dest: "dist/scripts/main.js"
-			}
-		},
-
-		imagemin: {
-			dist: {
-				options: {
-					optimizationLevel: 3
-				},
-				files: [{
-					expand: true,
-					cwd: "app/images",
-					src: "**/*.{png,jpg,jpeg}",
-					dest: "dist/images"
-				}]
-			}
-		},
-
 		htmlmin: {
 			dist: {
 				options: {
 					removeComments: true,
-					collapseWhitespace: false
+					collapseWhitespace: true
 				},
 				files: [{
 					"dist/index.html": "dist/index.html"
@@ -162,15 +123,11 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		rsync: {
-			development: {
-				options: {
-					src: "dist/",
-					dest: "/srv/www/your-site-path",
-					host: "soap@0.0.0.0",
-					recursive: true,
-					syncDest: true
-				}
+		includes: {
+			dist: {
+				src: "dist/index.html",
+				dest: "dist/index.html",
+				flatten: true				
 			}
 		}
 
@@ -179,12 +136,12 @@ module.exports = function( grunt ) {
 	// Build
 	grunt.registerTask( "build", [ 
 		"clean:dist", 
-		"copy:dist", 
 		"compass:dist", 
 		"coffee:dev",
 		"requirejs",
-		"concat",
 		"targethtml:dist",
+		"includes:dist",
+		"clean:external",
 		"htmlmin:dist"
 	]);
 
