@@ -1,0 +1,68 @@
+@import "compass/reset"
+@import "compass/css3"
+
+// Setup the canvas to fill the screen
+html , body , canvas
+    position: absolute
+    overflow: hidden
+    height: 100%
+    width: 100%
+    left: 0
+    top: 0
+    
+html
+    background-color: #231f20
+    
+canvas
+    z-index: 2
+         
+main
+    font-family: "Roboto", sans-serif
+    @include translate( -50% , -66% )
+    color: tint( #231f20 , 10% )
+    position: absolute
+    text-align: center
+    z-index: 1
+    left: 50%
+    top: 50%
+    width: 100%
+
+    h1
+        font-weight: 900
+        font-size: 72px
+        letter-spacing: -2px
+        padding: 0
+        margin: 0
+
+    h3
+        font-weight: 700
+        font-size: 60px
+        letter-spacing: -2px
+        
+    p
+        font-weight: 500
+        line-height: 18px
+   
+    & ~ .instructions
+        z-index: 3
+        opacity: 0
+
+.ludomade
+    z-index: 3
+    position: absolute
+    width: 100%
+    font-family: "Roboto", sans-serif
+    bottom: 25px
+    color: tint( #231f20 , 10% )
+    text-align: center
+
+    .mark
+        display: inline-block
+        width: 50px
+        height: 50px
+        margin-bottom: 1em
+
+    a
+        font-weight: 500
+        color: tint( #231f20 , 10% )
+        text-decoration: none
