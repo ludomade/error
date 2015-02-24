@@ -6,6 +6,7 @@ define [
     "game/controllers/BadGuyController"
     "game/controllers/ParticleController"
     "game/controllers/MissleController"
+    "game/controllers/ScoreController"
     "game/controllers/UtilityController"
     
 ] , (
@@ -16,6 +17,7 @@ define [
     BadGuyController
     ParticleController
     MissleController
+    ScoreController
     UtilityController
     
 ) ->
@@ -30,6 +32,7 @@ define [
             asteroids: new AsteroidController
             particles: new ParticleController
             missles: new MissleController
+            score: new ScoreController
             tools: new UtilityController
             
             start: ->
@@ -41,6 +44,7 @@ define [
                     "asteroids"
                     "particles"
                     "missles"
+                    "score"
                 ]
                 
                 while i < run.length

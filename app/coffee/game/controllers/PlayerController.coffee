@@ -165,6 +165,8 @@ define ->
                 r = @.ship.vis.scale * 9
                 x = @.ship.vis.pos.x
                 y = @.ship.vis.pos.y
+
+                game.score.die()
                 game.particles.explosion( x , y , Math.round( @.ship.vis.scale ) , 0.15 , 2 , 150 , 1250 , @.ship.vis.scale / 2 , @.ship.vis.scale / 1.5 )
                 
                 @.ship.vis.pos.x = window.innerWidth / 2

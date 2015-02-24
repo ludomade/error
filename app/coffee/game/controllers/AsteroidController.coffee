@@ -10,7 +10,6 @@ define ->
             @.loop()
                 
         generate: ( xPos , yPos , scale ) ->
-            console.log x
             if !xPos? then xPos = Math.random() * window.innerWidth
             if !yPos? then yPos = Math.random() * window.innerHeight
             if !scale?
@@ -113,6 +112,8 @@ define ->
                 @.generate( x , y , s1 )
                 @.generate( x , y , s2 )
             
+            game.score.asteroid()
+
             game.particles.explosion( x , y , Math.round( a.vis.scale * 1.25 ) , 0.15 , 2 , 150 , 1250 , a.vis.scale / 10 , a.vis.scale / 3.5 , a.data.vel.x , a.data.vel.y )
             setTimeout =>
                 @.destroy( a )

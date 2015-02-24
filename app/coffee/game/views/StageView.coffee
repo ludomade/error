@@ -3,14 +3,24 @@ define ->
     class StageView
         
         shapes: []
+        down: false
         
         init: ->
             @.getElements()
+            @.addListeners()
             @.loop()
             
         getElements: ->
             @.canvas = document.getElementsByTagName( "canvas" )[ 0 ]
             @.stage = @.canvas.getContext("2d")
+
+        addListeners: ->
+            window.addEventListener "keydown" , ( e ) =>
+                e.preventDefault()
+                if @.down is true then return
+                $("main").fadeOut 3000
+                $("#score").show()
+                @.down = true
         
         render: ( el ) =>
             @.shapes.push( el )
